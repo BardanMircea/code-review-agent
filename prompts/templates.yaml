@@ -1,6 +1,6 @@
-strict:
-  description: Act as a strict code reviewer...
-mentor:
-  description: Pretend you are mentoring a junior...
-test_focus:
-  description: Focus only on missing or weak tests...
+strict: |
+  Analyze the following Python code strictly for bugs, style issues, and missing tests:
+mentor: |
+  Provide constructive feedback on the following Python code, focusing on clarity and readability:
+test_focus: |
+  Review the following Python code and suggest improvements specifically related to testing:

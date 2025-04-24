@@ -1,11 +1,24 @@
 class LLMClient:
-    def __init__(self, provider, model):
-        ...
+    def __init__(self, provider):
+        self.provider = provider
 
-    def run(self, prompt, code_snippet):
-        if self.provider == "openai":
-            return self._call_openai(prompt, code_snippet)
-        elif self.provider == "ollama":
-            return self._call_ollama(prompt, code_snippet)
+    def run(self, prompt):
+        if self.provider == "ollama":
+            return self._call_ollama(prompt)
+        elif self.provider == "openai":
+            return self._call_openai(prompt)
         elif self.provider == "anthropic":
-            return self._call_claude(prompt, code_snippet)
+            return self._call_anthropic(prompt)
+        else:
+            raise ValueError(f"Unsupported provider: {self.provider}")
+
+    def _call_ollama(self, prompt):
+        return f"Ollama Llama 3.2 response for prompt: {prompt}"
+
+    def _call_openai(self, prompt):
+        # Placeholder for OpenAI API call
+        return "OpenAI response (placeholder)"
+
+    def _call_anthropic(self, prompt):
+        # Placeholder for Anthropic Claude API call
+        return "Anthropic response (placeholder)"
